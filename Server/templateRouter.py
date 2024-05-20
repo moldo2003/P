@@ -2,6 +2,7 @@ from flask import Blueprint,render_template, send_from_directory
 
 templates = Blueprint('templates', __name__)
 
+
 @templates.route('/')
 def index():
     return render_template('init.html')
