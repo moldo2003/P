@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script>
+      let auth = localStorage.getItem("auth");
+      if (auth == null) {
+        window.location.href = "/login";
+      } else {
+        fetch("/verifyToken", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            token: auth,
+          }),
+        }).then((res) => {
+          if (res.status == 200) {
+            window.location.href = "/home";
+          } else {
+            localStorage.removeItem("auth");
+            window.location.href = "/login";
+          }
+        });
+      }
+    </script>
+  </head>
+</html>

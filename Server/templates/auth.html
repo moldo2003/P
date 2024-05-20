@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/auth.css') }}"
+    />
+    <script src="{{ url_for('static',filename='scripts/auth.js') }}"></script>
+    <title>Auth</title>
+  </head>
+  <body>
+    <img
+      src="{{ url_for('static',filename='images/logo.png') }}"
+      alt="logo"
+      class="logo"
+    />
+    <div class="auth-form">
+      <form id="loginForm">
+        <h1 class="title">Log In</h1>
+        <div class="form-control">
+          <input type="value" required="" id="name"/>
+          <label>
+            <span style="transition-delay: 0ms">U</span
+            ><span style="transition-delay: 50ms">s</span
+            ><span style="transition-delay: 100ms">e</span
+            ><span style="transition-delay: 150ms">r</span
+            ><span style="transition-delay: 200ms">n</span
+            ><span style="transition-delay: 250ms">a</span
+            ><span style="transition-delay: 300ms">m</span
+            ><span style="transition-delay: 350ms">e</span>
+          </label>
+        </div>
+        <div class="form-control">
+          <input type="password" required="" id="password" />
+          <label>
+            <span style="transition-delay: 0ms">P</span
+            ><span style="transition-delay: 50ms">a</span
+            ><span style="transition-delay: 100ms">s</span
+            ><span style="transition-delay: 150ms">s</span
+            ><span style="transition-delay: 200ms">w</span
+            ><span style="transition-delay: 250ms">o</span
+            ><span style="transition-delay: 300ms">r</span
+            ><span style="transition-delay: 350ms">d</span>
+          </label>
+        </div>
+        <button class="button" type="submit" id="login">Login</button>
+        <p class="create-acc" onclick="redirectToRegister()">Create account</p>
+        
+      </form>
+    </div>
+  </body>
+</html>

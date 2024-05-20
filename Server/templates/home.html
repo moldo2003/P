@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/home.css') }}"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+      integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="{{ url_for('static',filename='scripts/home.js') }}"></script>
+  </head>
+  <body>
+    <div class="tab-bar">
+      <img
+        src="{{ url_for('static',filename='images/logo.png') }}"
+        alt="logo"
+        class="logo"
+      />
+
+      <img
+        src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
+        alt="Avatar"
+        class="avatar"
+      />
+    </div>
+    <div class="hamburger">
+      <div class="line">Settings</div>
+      <button class="button" onclick="copyToClipboard()">Copy StreamKey</button>
+      <button
+        class="button"
+        onclick="document.getElementById('fileInput').click()"
+      >
+        Chage Pic
+      </button>
+      <button class="Btn" onclick="logout()">
+        <div class="sign">
+          <svg viewBox="0 0 512 512">
+            <path
+              d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="text">Logout</div>
+      </button>
+    </div>
+    <p class="title">Available Streams</p>
+    <div class="streams-container" id="streams-container"></div>
+
+    <input type="file" id="fileInput" style="display: none" />
+  </body>
+</html>

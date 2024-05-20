@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RTMP Stream</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/stream.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+      integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ url_for('static',filename='scripts/stream.js') }}"></script>
+  </head>
+  <body>
+    <div class="tab-bar">
+      <span id="back" class="material-symbols-outlined"> arrow_back </span>
+
+      <img
+        src="{{ url_for('static',filename='images/logo.png') }}"
+        alt="logo"
+        class="logo"
+      />
+      <div></div>
+    </div>
+    <div class="content">
+      <video id="stream" class="stream" autoplay></video>
+      <div class="messages-container" id="message-container">
+        <p class="title">Live Messages</p>
+        <div class="messages" id="messages">
+
+        </div>
+        <div id="chat">
+          <div class="form-control">
+            <input
+              class="input input-alt"
+              placeholder="Type a message"
+              required=""
+              type="text"
+              id="messageInput"
+            />
+            <span class="input-border input-border-alt"></span>
+            <button class="sendButton" id="sendButton">
+              <span class="material-symbols-outlined"> send </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
